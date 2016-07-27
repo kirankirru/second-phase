@@ -58,6 +58,50 @@ package com.flp.ems.util;
 		  return false;
 	     }			    
 	   }
-	}
+	
+	
+	public  boolean isPhoneNumberValid(String phoneNumber){
+		boolean isValid = false;
+	    String expression = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$";
+		CharSequence inputStr = phoneNumber;
+		Pattern pattern = Pattern.compile(expression);
+		Matcher matcher = pattern.matcher(inputStr);
+		if(matcher.matches()){
+		isValid = true;
+		}
+		return isValid;
+		}
+		
+	public  boolean isEmailValid(String email){
+		boolean isValid = false;
+
+
+		String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+		CharSequence inputStr = email;
+		
+		Pattern pattern = Pattern.compile(expression,Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(inputStr);
+		if(matcher.matches()){
+		isValid = true;
+		}
+		return isValid;
+		}
+
+	  public boolean isNameValid(String name){
+		  boolean isValid=false;
+		
+		  String expression = "^[a-zA-Z\\s]*$";
+		  CharSequence inputStr=name;
+		  Pattern pattern=Pattern.compile(expression);
+		  Matcher matcher = pattern.matcher(inputStr);
+		  if(matcher.matches()){
+				isValid = true;
+				}
+				return isValid;
+				}
+	    	    
+	  }
+	
+	
 	
 

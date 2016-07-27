@@ -4,6 +4,7 @@ public class Department {
 	private int deptid;
 	private String deptName;
 	
+	
 	public int getDeptid() {
 		return deptid;
 	}
